@@ -1,4 +1,4 @@
-# simple-with-compositon
+# vue3-first-todo 
 
 ## Project setup
 ```
