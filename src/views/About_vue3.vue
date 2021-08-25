@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <h3>
-      You have <b> {{ todos.length }} </b> ToDos!!
+      You have <b> {{ todosCount }} </b> ToDos!!
     </h3>
   </div>
 
@@ -19,27 +19,19 @@
       <span>{{ todo.name }} </span>
       <button @click="deleteTodo(index)">X</button>
     </li>
-    <!-- <li>
-      <span>One </span>
-      <button>X</button>
-    </li>
-    <li>
-      <span>Two </span>
-      <button>X</button>
-    </li>
-    <li>
-      <span>Three </span>
-      <button>X</button>
-    </li> -->
   </ul>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 export default {
   setup() {
-    //const swearwords = ['Hausübung', 'lernen', 'Schule'];
+    const swearwords = ['Hausübung', 'lernen', 'Schule'];
+
+    let todosCount = computed(() => {
+      return todos.value.length;
+    });
     let newName = ref('');
     let todos = ref([
       {
@@ -68,11 +60,19 @@ export default {
       todos.value.splice(index, 1);
     }
 
+    watch(newName, (newVal) => {
+      console.log('New Val ' + newVal.value);
+      if (swearwords.includes(newVal)) {
+        newName.value = '';
+      }
+    });
+
     return {
       newName,
       todos,
       addToDo,
       deleteTodo,
+      todosCount,
     };
 
     /*    return {

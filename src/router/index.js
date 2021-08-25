@@ -4,12 +4,12 @@ import Home from "@/views/Home_vue2.vue";
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "Vue2",
     component: Home,
   },
   {
     path: "/about",
-    name: "About",
+    name: "Vue3",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.

@@ -19,18 +19,7 @@
       <span>{{ todo.name }} </span>
       <button @click="deleteTodo(index)">X</button>
     </li>
-    <!-- <li>
-      <span>One </span>
-      <button>X</button>
-    </li>
-    <li>
-      <span>Two </span>
-      <button>X</button>
-    </li>
-    <li>
-      <span>Three </span>
-      <button>X</button>
-    </li> -->
+    
   </ul>
 </template>
 
