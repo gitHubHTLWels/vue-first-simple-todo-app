@@ -35,11 +35,47 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// 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
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    //const swearwords = ['Hausübung', 'lernen', 'Schule'];
+    let newName = ref('');
+    let todos = ref([
+      {
+        name: 'Deutsch Aufsatz schreiben',
+      },
+      {
+        name: 'Fussball spielen',
+      },
+      {
+        name: 'Online-Meeting',
+      },
+    ]);
+
+    function addToDo() {
+      console.log('Enter addToDo() ...');
+      if (newName.value.length > 0) {
+        let aNewTodDo = {
+          name: newName.value,
+        };
+        todos.value.push(aNewTodDo);
+        newName.value = '';
+      }
+    }
+
+    function deleteTodo(index) {
+      todos.value.splice(index, 1);
+    }
+
     return {
+      newName,
+      todos,
+      addToDo,
+      deleteTodo,
+    };
+
+    /*    return {
       newName: '',
       todos: [
         {
@@ -78,25 +114,7 @@ export default {
       }
     },
   },
+}; */
+  },
 };
 </script>
-
-<style>
-ul {
-  list-style-type: none;
-  padding: 0;
-  width: 300px;
-  margin: 20px auto 0;
-}
-li {
-  border: 1px solid;
-  display: flex;
-  margin-bottom: 10px;
-}
-li span {
-  flex-grow: 1;
-}
-input {
-  width: 300px;
-}
-</style>
