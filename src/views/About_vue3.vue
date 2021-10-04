@@ -8,34 +8,20 @@
     -->
   </div>
 
-  <!--
   <div>
-    <input
-      placeholder="Add a ToDo"
-      type="text"
-      v-model="newName"
-      v-on:keyup.enter="addToDo"
-    />
+    <input placeholder="Add a ToDo" type="text" v-model="newName" />
   </div>
-  -->
+
+  <!--
+      v-on:keyup.enter="addToDo"
+      -->
+
   <ul>
-    <!--
     <li v-for="(todo, index) in todos" :key="index">
       <span>{{ todo.name }} </span>
+      <!--
       <button @click="deleteTodo(index)">X</button>
-    </li>
-    -->
-    <li>
-      <span>One </span>
-      <button>X</button>
-    </li>
-    <li>
-      <span>Two </span>
-      <button>X</button>
-    </li>
-    <li>
-      <span>Three </span>
-      <button>X</button>
+      -->
     </li>
   </ul>
 </template>
@@ -58,7 +44,7 @@ export default {
         name: 'Online-Meeting',
       },
     ]);
-
+    /*
     function addToDo() {
       console.log('Enter addToDo() ...');
       if (newName.value.length > 0) {
@@ -73,12 +59,10 @@ export default {
     function deleteTodo(index) {
       todos.value.splice(index, 1);
     }
-
+*/
     return {
       newName,
       todos,
-      addToDo,
-      deleteTodo,
     };
   },
 };
