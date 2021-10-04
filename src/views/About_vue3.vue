@@ -74,47 +74,6 @@ export default {
       deleteTodo,
       todosCount,
     };
-
-    /*    return {
-      newName: '',
-      todos: [
-        {
-          name: 'Deutsch Aufsatz schreiben',
-        },
-        {
-          name: 'Fussball spielen',
-        },
-        {
-          name: 'Online-Meeting',
-        },
-      ],
-      swearwords: ['Hausübung', 'lernen', 'Schule'],
-    };
-  },
-  methods: {
-    addToDo() {
-      console.log('Enter addToDo() ...');
-      if (this.newName.length > 0) {
-        let aNewTodDo = {
-          name: this.newName,
-        };
-        this.todos.push(aNewTodDo);
-        this.newName = '';
-      }
-    },
-    deleteTodo(index) {
-      this.todos.splice(index, 1);
-    },
-  },
-  watch: {
-    newName(newValue) {
-      console.log('New Val ' + newValue);
-      if (this.swearwords.includes(newValue)) {
-        this.newName = '';
-      }
-    },
-  },
-}; */
   },
 };
 </script>
